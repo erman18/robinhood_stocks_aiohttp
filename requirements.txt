@@ -23,3 +23,4 @@ tqdm==4.66.5
 tzdata==2024.1
 ujson==5.10.0
 yarl==1.9.7
+pyotp-2.9.0
