@@ -1,0 +1,30 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="robinhood_stocks_aiohttp",
+    version="0.1",
+    packages=find_packages(),
+    install_requires=[
+        "aiohttp",
+        "async-timeout",
+        "attrs",
+        "autopep8",
+        "chardet",
+        "colorama",
+        "idna",
+        "multidict",
+        "numpy",
+        "pandas",
+        "pycodestyle",
+        "PyJWT",
+        "python-dateutil",
+        "pytz",
+        "six",
+        "tabulate",
+        "toml",
+        "tqdm",
+        "ujson",
+        "yarl",
+        "pyotp",
+    ],
+)
