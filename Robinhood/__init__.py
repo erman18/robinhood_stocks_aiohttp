@@ -445,7 +445,9 @@ class Robinhood(ApiOperations):
 
     @staticmethod
     def is_token_valid(access_token, days_before_exp=1):
-        time_stamp = jwt.decode(access_token, verify=False)["exp"]
+        time_stamp = jwt.decode(access_token, options={"verify_signature": False})[
+            "exp"
+        ]
         real_time_stamp = datetime.fromtimestamp(time_stamp)
         return real_time_stamp - timedelta(days=days_before_exp) > datetime.now()
 
