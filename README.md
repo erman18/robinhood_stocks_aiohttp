@@ -7,14 +7,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/IoT-master/robinhood_stocks_aiohttp">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Asynchronous Robinhood Stocks API</h3>
 
@@ -150,6 +145,3 @@ XMR: 47q8uPAG3Un51nEKshua39U21DQ3VRf5HE3KArLtjyg21Zqs7QPvygx4TXPe2jt7rVGYk6NGizL
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/senh-mo-chuang/

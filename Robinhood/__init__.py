@@ -499,7 +499,3 @@ class Robinhood(ApiOperations):
                 return none_type
         else:
             return data
-
-    async def main(self):
-        data = await self.login(self)
-        print(data)

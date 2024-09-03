@@ -1,24 +1,39 @@
+import asyncio
 import os
-from pprint import pprint
 
 import pyotp
 from Robinhood import Robinhood
 
 
-class Usage(Robinhood):
+async def main():
+    client = Robinhood()
+    try:
+        await client.initialize()
 
-    async def main(self):
         username = os.environ.get("ROBINHOOD_USERNAME")
         password = os.environ.get("ROBINHOOD_PASSWORD")
         totp_key = os.environ.get("ROBINHOOD_TOTP_KEY")
 
+        if not all([username, password, totp_key]):
+            raise ValueError("Robinhood credentials not set in environment variables")
+
         totp = pyotp.TOTP(totp_key).now()
         print(f"totp code: {totp}")
-        await self.login(username=username, password=password, mfa_code=totp)
-        # await self.login()
-        options_dict = await self.get_option_positions_from_account()
-        pprint(options_dict)
+
+        login_response = await client.login(
+            username=username, password=password, mfa_code=totp
+        )
+        print("Login response:", login_response)
+
+        # Get all positions
+        positions = await client.get_option_positions_from_account()
+        print("Account positions:", positions)
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        await client.close()
 
 
 if __name__ == "__main__":
-    instance = Usage()
+    asyncio.run(main())
